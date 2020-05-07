@@ -29,14 +29,19 @@ public class Total
 
 		double total = 0;
 
+		boolean left = true;
 		while (in.hasNextDouble())
 		{
 			double value = in.nextDouble();
-			out.printf("%15.2f\n", value);
+			out.printf("%9.2f", value);
 			total = total + value;
+			left ^= true;
+			if (left) {
+				out.println();
+			}
 		}
 
-		out.printf("Total: %8.2f\n", total);
+		out.printf("Total: %11.2f\n", total);
 
 		in.close();
 		out.close();
